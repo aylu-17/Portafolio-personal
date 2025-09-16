@@ -119,6 +119,16 @@
           <p class="project-description">Sitio web turístico con info, reservas y fotos. </p>
           <a class="project-button" href="https://alojamientoruhe.com/" target="_blank">Ver proyecto</a>
         </div>
+        <div class="project-card">
+          <h3 class="project-title">Club de  futbol 1989</h3>
+          <p class="project-description">Sitio web deportivo. Hecho por nexusweb en el cual pertenezco tambien</p>
+          <a class="project-button" href="https://clubarenal1989.online/" target="_blank">Ver proyecto</a>
+        </div>
+        <div class="project-card">
+          <h3 class="project-title">Proyecto de Spiderman</h3>
+          <p class="project-description">Historia y personajes de spirderman , desarollado por un proyecto de la escuela</p>
+          <a class="project-button" href="http://www.epet12.com.ar/j12/" target="_blank">Ver proyecto</a>
+        </div>
         
         
       </div>
@@ -194,18 +204,37 @@
                         </div>
                     </div>
                     
-                    <form action="https://formsubmit.co/ayluperco@gmail.com"method="POST"class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Tu email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Tu mensaje" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
-                    </form>
+                    <form onsubmit="sendToWhatsApp(event)" class="contact-form" id="contactForm">
+                      <div class="form-group">
+                          <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                      </div>
+                      <div class="form-group">
+                          <input type="email" id="email" name="email" placeholder="Tu email" required>
+                      </div>
+                      <div class="form-group">
+                          <textarea id="message" name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+                      </div>
+                      <button type="submit" class="submit-btn">Enviar por WhatsApp</button>
+                  </form>
+
+                  <script>
+                  function sendToWhatsApp(e) {
+                      e.preventDefault(); // evita que el form se envíe de manera tradicional
+                      
+                      let name = document.getElementById("name").value;
+                      let email = document.getElementById("email").value;
+                      let message = document.getElementById("message").value;
+
+                      let phone = "5492944602390"; // tu número en formato internacional
+                      
+                      let url = "https://wa.me/" + phone + "?text=" 
+                          + "👤 Nombre: " + encodeURIComponent(name) + "%0A"
+                          + "📧 Email: " + encodeURIComponent(email) + "%0A"
+                          + "💬 Mensaje: " + encodeURIComponent(message);
+
+                      window.open(url, "_blank");
+                  }
+                  </script>
                 </div>
             </div>
         </section>
